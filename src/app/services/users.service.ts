@@ -1,17 +1,23 @@
-import { Injectable } from '@angular/core';
+import{Injectable}from'@angular/core';
 
 //Importaciones nuevas
-import { Http } from '@angular/http';
-import { APIService } from '.././common/api.service';
-import { AppConfiguration } from '.././common/config/app-configuration.service';
-import { AuthService } from '.././common/auth.service';
+import {Http}from '@angular/http';
+import {APIService}from '.././common/api.service';
+import {AppConfiguration}from '.././common/config/app-configuration.service';
+import {AuthService}from '.././common/auth.service';
+import {User} from '.././models/user';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class UsersService extends APIService {
+
+private resourceUrl: string = 'user/';
+
 constructor(
     public config: AppConfiguration,
     public authService: AuthService,
     public http: Http
+
   ) {
     super(config, authService, http);
   }
@@ -23,4 +29,11 @@ constructor(
       }
     });
   }
+
+  getSites(): Observable<User[]> {
+    console.log("llego a getSites");
+    return this.get(this.resourceUrl+"getAll");
+  }
+
+
 }

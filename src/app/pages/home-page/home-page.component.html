@@ -1,3 +1,11 @@
-<p>
-  Welcome to COSW angular seed
-</p>
+<div class="container">
+  <br>
+  <div class="row">
+
+    <div *ngFor="let ul of userslist" class="col-xs-6 col-md-3">
+      <br>
+      <a (click)="saveSite(ul.username)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1" role="button" aria-pressed="true">
+        <img src="{{ul.logo}}" width="190" height="190"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>
+    </div>
+  </div>
+</div>

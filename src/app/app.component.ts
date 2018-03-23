@@ -17,7 +17,7 @@ export class AppComponent {
     public router: Router
   ) {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 

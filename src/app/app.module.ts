@@ -55,7 +55,7 @@ const ROUTES = [
     APIService,
     AuthService,
     AppDataService,
-    UsersService
+    UsersService,
   ],
   bootstrap: [AppComponent]
 })
