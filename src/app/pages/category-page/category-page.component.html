@@ -1,11 +1,16 @@
 <div class="container">
     <br>
+    <br>
+    <div>
+        <h3>En (nombre empresa) podras conocer lo mejores lugares para realizar planes con tu familia y amigos ...</h3>
+        <h2>Conoce los mejores lugares de</h2><h1>Cajicá</h1>
+    </div>
     <div class="row">
 
         <div *ngFor="let cl of categoryList" class="col-xs-6 col-xs-3">
             <br>
             <a (click)="saveCategory(cl.name)" routerLinkActive="/sites" routerLink="/sites"  class="btn btn1" role="button" aria-pressed="true">
-                <img src="{{cl.image}}" width="190" height="190"><HR><p>{{cl.name}}</p></a>
+                <img src="{{cl.image}}" width="190" height="190"><HR><h5>{{cl.name}}</h5></a>
         </div>
     </div>
 </div>
