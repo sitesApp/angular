@@ -7,8 +7,10 @@ import { FormGroup, FormBuilder,FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SitesPageComponent } from './pages/sites-page/sites-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -21,21 +23,26 @@ import { AuthService } from './common/auth.service';
 import { AppDataService } from './common/app-data.service';
 import { SignInPageComponent } from './pages/sign-in/sign-in-page.component';
 import { UsersService } from './services/users.service';
+import { CategoryService } from './services/category.service';
+
+
 
 
 
 const ROUTES = [
 { path: 'signin', component: SignInPageComponent },
-{ path: 'home', component: HomePageComponent },
+{ path: 'categorys', component: CategoryPageComponent },
+{ path: 'sites', component: SitesPageComponent },
 {path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
+    SitesPageComponent,
     PageNotFoundComponent,
-    SignInPageComponent
+    SignInPageComponent,
+    CategoryPageComponent
   ],
   imports: [
     HttpModule,
@@ -56,6 +63,7 @@ const ROUTES = [
     AuthService,
     AppDataService,
     UsersService,
+    CategoryService,
   ],
   bootstrap: [AppComponent]
 })

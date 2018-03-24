@@ -17,7 +17,7 @@ export class AppComponent {
     public router: Router
   ) {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/categorys']);
     }
   }
 
@@ -27,6 +27,7 @@ export class AppComponent {
 
   signOut() {
     this.authService.signOut();
+    this.router.navigate(['/categorys']);
   }
 
 }

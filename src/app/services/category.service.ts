@@ -5,13 +5,14 @@ import {Http}from '@angular/http';
 import {APIService}from '.././common/api.service';
 import {AppConfiguration}from '.././common/config/app-configuration.service';
 import {AuthService}from '.././common/auth.service';
-import {User} from '.././models/user';
+import {Category} from '.././models/category';
 import {Observable} from 'rxjs/Observable';
 
-@Injectable()
-export class UsersService extends APIService {
 
-private resourceUrl: string = 'user/';
+@Injectable()
+export class CategoryService extends APIService {
+
+private resourceUrl: string = 'category/';
 
 constructor(
     public config: AppConfiguration,
@@ -22,22 +23,10 @@ constructor(
     super(config, authService, http);
   }
 
-  login(username: string, password: string) {
-    return this.post('user/login', { username, password }, { credentials: false }).map(loginResponse => {
-      if (loginResponse) {
-        this.authService.accessToken = loginResponse.accessToken;
-      }
-    });
-  }
 
-  getSites(): Observable<User[]> {
+  getCategorys(): Observable<Category[]> {
     return this.get(this.resourceUrl+"getAll");
   }
-
-  getSitesByCategory(category): Observable<User[]> {
-    return this.get(this.resourceUrl+"byCategory/"+category);
-  }
-
 
 
 }

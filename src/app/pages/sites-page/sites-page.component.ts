@@ -3,11 +3,11 @@ import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  selector: 'app-sites-page',
+  templateUrl: './sites-page.component.html',
+  styleUrls: ['./sites-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class SitesPageComponent implements OnInit {
 
   private userslist: User[] = [];
 
@@ -16,8 +16,8 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("llego a onInit");
-    this.usersService.getSites().subscribe(usersResponse=>{
+    var data = sessionStorage.getItem("categoryName");
+    this.usersService.getSitesByCategory(data).subscribe(usersResponse=>{
        this.userslist = usersResponse;
     })
   }

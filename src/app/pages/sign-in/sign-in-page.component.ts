@@ -7,9 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-in-page',
   templateUrl: './sign-in-page.component.html',
+  styleUrls: ['./sign-in-page.component.css']
 })
-
-
 
 export class SignInPageComponent implements OnInit {
     public signInForm: FormGroup;
@@ -28,9 +27,9 @@ export class SignInPageComponent implements OnInit {
     this.usersService.login(
       this.signInForm.get('username').value,
       this.signInForm.get('password').value).subscribe(loginResponse => {
-        this.router.navigate(['tasks']);
+        this.router.navigate(['categorys']);
       }, error => {
-        this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
+        this.loginError = 'Error Signing in: ' + error;
       })
   }
 
