@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SitesPageComponent } from './pages/sites-page/sites-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { SiteProfileComponent } from './pages/site-profile/site-profile.component';
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +33,7 @@ import { CategoryService } from './services/category.service';
 const ROUTES = [
 { path: 'signin', component: SignInPageComponent },
 { path: 'categorys', component: CategoryPageComponent },
+{ path: 'siteProfile', component: SiteProfileComponent },
 { path: 'sites', component: SitesPageComponent },
 {path: '**', component: PageNotFoundComponent}
 ]
@@ -42,7 +44,8 @@ const ROUTES = [
     SitesPageComponent,
     PageNotFoundComponent,
     SignInPageComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    SiteProfileComponent
   ],
   imports: [
     HttpModule,

@@ -38,6 +38,10 @@ constructor(
     return this.get(this.resourceUrl+"byCategory/"+category);
   }
 
+  getSite(siteName): Observable<User> {
+    return this.get(this.resourceUrl+"getsite/"+siteName)
+  }
+
 
 
 }
