@@ -1,11 +1,63 @@
 <div class="container">
     <br>
     <br>
-    <br>
-    <br>
-        <h1 *ngIf="currentUser">{{currentUser.companyName}}</h1>
+    <div class="row">
+    <div *ngFor="let c of listCoupons" class="col-sm-4">
+        <br>
+        <div class="card" style="width:350px">
+            <img class="card-img-top" src="{{c.image}}" alt="Card image" style="width:100%">
+            <div class="card-img-overlay">
+                <img src="/assets/images/promo.svg" width="80" height="80">
+                <br>
+                <br>
+                <br>
+                <div class="promo">
 
-        <img src="{{currentUser.logo}}" width="300" height="300">
+                    <font size="2"><font size="2">antes: </font><del>${{c.lastPrice}}</del></font>
+                    <br>
+                    <font size="4"><font size="2">ahora: </font>${{c.newPrice}}</font>
+                    <br>
+                    <font size="5">{{c.discountRate}}%<font size="2"> de descuento</font></font>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{c.name}}</h4>
+                <p class="card-text">{{c.description}}</p>
+                <a href="#" class="btn btn-primary">Descargar</a>
+                <br>
+                <font size="0">{{c.smallLetters}}</font>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <br>
+
+    <div class="card">
+        <div class="row ">
+            <div class="col-md-4">
+                <img class="card-img-top" src="{{currentUser.logo}}" alt="Card image" width="300" height="300">
+            </div>
+            <div class="col-md-8 px-3">
+                <div class="card-block px-3">
+                    <h4 class="card-title">{{currentUser.companyName}}</h4>
+                    <p class="card-text">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</p>
+                    <p class="card-text">Dirección: {{currentUser.companyAddres}}</p>
+                    <p class="card-text">Correo: {{currentUser.email}}</p>
+                    <a target="_blank" href="{{currentUser.linkFacebook}}" class="fa fa-facebook"></a>
+                    <a target="_blank" href="{{currentUser.linkInstagram}}" class="fa fa-instagram"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
 
 </div>
+
+
+
+

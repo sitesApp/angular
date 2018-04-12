@@ -7,6 +7,7 @@ import {AppConfiguration}from '.././common/config/app-configuration.service';
 import {AuthService}from '.././common/auth.service';
 import {User} from '.././models/user';
 import {Observable} from 'rxjs/Observable';
+import {Coupon} from '.././models/coupon';
 
 @Injectable()
 export class UsersService extends APIService {
@@ -42,6 +43,9 @@ constructor(
     return this.get(this.resourceUrl+"getsite/"+siteName)
   }
 
+  getCouponsByUsernameSite(siteUsername): Observable<Coupon[]> {
+    return this.get(this.resourceUrl+"getCoupons/"+siteUsername)
+  }
 
 
 }

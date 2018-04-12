@@ -16,6 +16,7 @@ export class CategoryPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scroll(0,0)
     this.categoryService.getCategorys().subscribe(cateResponse=>{
        this.categoryList = cateResponse;
     })

@@ -35,6 +35,7 @@ export class SignInPageComponent implements OnInit {
 
 
     ngOnInit() {
+        window.scroll(0,0)
 
   }
 }

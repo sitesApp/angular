@@ -4,7 +4,7 @@
 
     <div *ngFor="let ul of userslist" class="col-xs-6 col-xs-3">
       <br>
-      <a (click)="saveSite(ul.companyName)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1" role="button" aria-pressed="true">
+      <a (click)="saveSite(ul.companyName, ul.username)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1" role="button" aria-pressed="true">
         <img src="{{ul.logo}}" width="190" height="190"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>
     </div>
 
