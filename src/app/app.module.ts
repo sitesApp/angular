@@ -23,6 +23,11 @@ import { APIService } from './common/api.service';
 import { AuthService } from './common/auth.service';
 import { AppDataService } from './common/app-data.service';
 import { SignInPageComponent } from './pages/sign-in/sign-in-page.component';
+
+import { SignUpPageComponent } from './pages/sign-up/sign-up-page.component';
+import { InformationPageComponent } from './pages/information-page/information-page.component';
+
+
 import { UsersService } from './services/users.service';
 import { CategoryService } from './services/category.service';
 
@@ -35,6 +40,8 @@ const ROUTES = [
 { path: 'categorys', component: CategoryPageComponent },
 { path: 'siteProfile', component: SiteProfileComponent },
 { path: 'sites', component: SitesPageComponent },
+{ path: 'signup', component: SignUpPageComponent },
+{ path: 'contact', component: InformationPageComponent },
 {path: '**', component: PageNotFoundComponent}
 ]
 
@@ -45,7 +52,9 @@ const ROUTES = [
     PageNotFoundComponent,
     SignInPageComponent,
     CategoryPageComponent,
-    SiteProfileComponent
+    SiteProfileComponent,
+    SignUpPageComponent,
+    InformationPageComponent
   ],
   imports: [
     HttpModule,

@@ -29,7 +29,7 @@ export class SignInPageComponent implements OnInit {
       this.signInForm.get('password').value).subscribe(loginResponse => {
         this.router.navigate(['categorys']);
       }, error => {
-        this.loginError = 'Error Signing in: ' + error;
+        this.loginError = 'Vuelve a intentarlo' ;
       })
   }
 

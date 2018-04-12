@@ -9,7 +9,7 @@ import { AuthService } from './common/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'app';
 
   constructor(

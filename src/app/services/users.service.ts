@@ -6,6 +6,7 @@ import {APIService}from '.././common/api.service';
 import {AppConfiguration}from '.././common/config/app-configuration.service';
 import {AuthService}from '.././common/auth.service';
 import {User} from '.././models/user';
+import {Person} from '.././models/person';
 import {Observable} from 'rxjs/Observable';
 import {Coupon} from '.././models/coupon';
 
@@ -24,12 +25,17 @@ constructor(
   }
 
   login(username: string, password: string) {
-    return this.post('user/login', { username, password }, { credentials: false }).map(loginResponse => {
+    return this.post('person/login', { username, password }, { credentials: false }).map(loginResponse => {
       if (loginResponse) {
         this.authService.accessToken = loginResponse.accessToken;
       }
     });
   }
+
+  signUp(name: string, username: string, email:string, celphone:string, password:string) {
+    return this.post("person/signup", new Person(name, username, email, celphone, password));
+  }
+
 
   getSites(): Observable<User[]> {
     return this.get(this.resourceUrl+"getAll");
