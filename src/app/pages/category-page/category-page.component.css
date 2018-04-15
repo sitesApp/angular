@@ -9,10 +9,10 @@
         background: white;
         width: 250px;
         height: 150px;
-    color: white;
+        padding: 0px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 0px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -22,8 +22,29 @@
 }
 
 .btn:hover {
-    background-color: #E1A81B;
-    color: white;
+    color: black;
+    font-size: 30px;
 
+}
+
+.card:hover {
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 160px;
+    left: 0;
+    padding: 0rem;
+
+}
+
+
+
+img:hover {
+ -webkit-transition-duration: 1s; /* Safari */
+    transition-duration: 1s;
+    opacity: 0.3;
 }
 

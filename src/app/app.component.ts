@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 //Nuevos imports
 import { Router } from '@angular/router';
 import { AuthService } from './common/auth.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { AuthService } from './common/auth.service';
 })
 export class AppComponent  {
   title = 'app';
+  public searchForm: FormGroup;
 
   constructor(
     public authService: AuthService,
@@ -19,6 +21,10 @@ export class AppComponent  {
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/categorys']);
     }
+
+    this.searchForm = new FormGroup({
+        inputSearch: new FormControl()
+    });
   }
 
   isLoggedIn() {
@@ -28,6 +34,13 @@ export class AppComponent  {
   signOut() {
     this.authService.signOut();
     this.router.navigate(['/categorys']);
+  }
+
+  searchSite() {
+    var data = this.searchForm.get('inputSearch').value;
+    console.log(data);
+    sessionStorage.setItem("searchSite", data);
+    this.router.navigate(['/searchSite']);
   }
 
 }

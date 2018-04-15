@@ -15,7 +15,7 @@ export class SignInPageComponent implements OnInit {
     public loginError: string;
 
 
-  constructor(public formBuilder:FormBuilder,public usersService: UsersService,public router: Router) {
+      constructor(public formBuilder:FormBuilder,public usersService: UsersService,public router: Router) {
     this.signInForm = new FormGroup({
         username: new FormControl(),
         password: new FormControl()

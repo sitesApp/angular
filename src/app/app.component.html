@@ -10,18 +10,17 @@
       &nbsp;
       &nbsp;
       &nbsp;
+      <form [formGroup]="searchForm" (ngSubmit)="searchSite()" class="form-inline">
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="inputSearch" placeholder="Lugar" >
+          <button type="submit" class="btn btn-success" [disabled]="!searchForm.valid">Buscar</button>
+        </div>
+      </form>
     </ul>
   </div>
-  <div class="mx-auto order-0">
 
-  </div>
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ml-auto">
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <li class="nav-item">
-      </li>
 
 
     </ul>

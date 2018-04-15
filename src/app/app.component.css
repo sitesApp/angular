@@ -23,8 +23,6 @@
 
 
 .image:hover {
-    width: 205px;
-    height: 75px;
     transition-duration: 0.9s;
     opacity: 0.7;
 }
@@ -37,8 +35,8 @@
 
 #mybutton {
   position: fixed;
-  bottom: 300px;
-  left: 0px;
+  top: 250px;
+  right: 0px;
 }
 
 .fa {

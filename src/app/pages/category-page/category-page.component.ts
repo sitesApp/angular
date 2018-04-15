@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef, Renderer } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { Category } from '../../models/category';
 
@@ -9,6 +9,7 @@ import { Category } from '../../models/category';
 })
 export class CategoryPageComponent implements OnInit {
 
+
   private categoryList: Category[] = [];
 
   constructor(public categoryService: CategoryService){
@@ -16,6 +17,7 @@ export class CategoryPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
     window.scroll(0,0)
     this.categoryService.getCategorys().subscribe(cateResponse=>{
        this.categoryList = cateResponse;
@@ -23,9 +25,12 @@ export class CategoryPageComponent implements OnInit {
   }
 
 
+
   saveCategory(name: string){
     sessionStorage.setItem("categoryName", name);
   }
+
+
 
 }
 

@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder,FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { SitesPageComponent } from './pages/sites-page/sites-page.component';
+import { SearchSitePageComponent } from './pages/search-site-page/search-site-page.component';
+
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { SiteProfileComponent } from './pages/site-profile/site-profile.component';
@@ -30,7 +32,6 @@ import { InformationPageComponent } from './pages/information-page/information-p
 import { CouponPageComponent } from './pages/coupon-page/coupon-page.component';
 
 
-
 import { UsersService } from './services/users.service';
 import { CategoryService } from './services/category.service';
 import { NgxSlideshowModule } from 'ngx-slideshow';
@@ -47,6 +48,7 @@ const ROUTES = [
 { path: 'signup', component: SignUpPageComponent },
 { path: 'contact', component: InformationPageComponent },
 { path: 'coupon', component: CouponPageComponent },
+{path: 'searchSite', component: SearchSitePageComponent},
 {path: '**', component: PageNotFoundComponent}
 ]
 
@@ -60,7 +62,8 @@ const ROUTES = [
     SiteProfileComponent,
     SignUpPageComponent,
     CouponPageComponent,
-    InformationPageComponent
+    InformationPageComponent,
+    SearchSitePageComponent
   ],
   imports: [
     NgxSlideshowModule.forRoot(),
