@@ -24,7 +24,10 @@
 
 }
 
-
+.divCoupon{
+    display:table-cell;
+    vertical-align:middle;
+}
 
 .btn-Primary{
     background-color: #cf7b04;

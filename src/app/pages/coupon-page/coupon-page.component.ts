@@ -25,7 +25,12 @@ export class CouponPageComponent implements OnInit {
 
     let content = this.content.nativeElement;
 
-    doc.fromHTML(content.innerHTML, 10, 10, {
+    var img = new Image;
+    img.crossOrigin = "";  // for demo as we are at different origin than image
+    img.src = "/assets/brand/logo.png";
+    doc.addImage(img,10, 10, 50, 25);
+
+    doc.fromHTML(content.innerHTML, 15, 40, {
         'width': 190,
         'elementHandlers': specialElementHandlers
     });

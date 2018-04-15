@@ -1,14 +1,28 @@
 <br>
 <br>
-<br>
-<br>
-hola serach site
-<div class="row">
 
-    <div *ngFor="let ul of userslist" class="col-xs-6 col-xs-3">
-        <br>
-        <a (click)="saveSite(ul.companyName, ul.username)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1" role="button" aria-pressed="true">
-            <img src="{{ul.logo}}" width="190" height="190"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>
-    </div>
+<div class="card" style="width: 800px">
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Busqueda</li>
+        <li class="list-group-item">
+            <div class="card-body">
+                <div class="row" >
+                    <div *ngFor="let ul of userslist" class="col-xs-4">
+
+                        <div class="card internos" style="width: 260px">
+                            <div class="card-body">
+                                <img src="{{ul.logo}}" width="120" height="120">
+                                <a (click)="saveSite(ul.companyName, ul.username)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1">
+                                    Ver Sitio</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+    </ul>
+
 
 </div>

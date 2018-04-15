@@ -22,12 +22,13 @@ export class SiteProfileComponent implements OnInit {
         window.scroll(0,0)
     var data = sessionStorage.getItem("siteName");
     this.usersService.getSite(data).subscribe(usersResponse=>{
-
+       console.log(usersResponse);
        this.currentUser = usersResponse;
     })
 
     var data1 = sessionStorage.getItem("siteUsername");
     this.usersService.getCouponsByUsernameSite(data1).subscribe(usersResponse=>{
+        console.log(usersResponse);
        this.listCoupons = usersResponse;
     })
   }
