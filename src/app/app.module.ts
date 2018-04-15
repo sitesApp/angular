@@ -27,9 +27,13 @@ import { SignInPageComponent } from './pages/sign-in/sign-in-page.component';
 import { SignUpPageComponent } from './pages/sign-up/sign-up-page.component';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
 
+import { CouponPageComponent } from './pages/coupon-page/coupon-page.component';
+
+
 
 import { UsersService } from './services/users.service';
 import { CategoryService } from './services/category.service';
+import { NgxSlideshowModule } from 'ngx-slideshow';
 
 
 
@@ -42,6 +46,7 @@ const ROUTES = [
 { path: 'sites', component: SitesPageComponent },
 { path: 'signup', component: SignUpPageComponent },
 { path: 'contact', component: InformationPageComponent },
+{ path: 'coupon', component: CouponPageComponent },
 {path: '**', component: PageNotFoundComponent}
 ]
 
@@ -54,9 +59,11 @@ const ROUTES = [
     CategoryPageComponent,
     SiteProfileComponent,
     SignUpPageComponent,
+    CouponPageComponent,
     InformationPageComponent
   ],
   imports: [
+    NgxSlideshowModule.forRoot(),
     HttpModule,
     BrowserModule,
     NgbModule.forRoot(),

@@ -1,10 +1,10 @@
 .navbar {
-    background-color: #cf7b04;
+    background-color: #0e6ebe;
     box-shadow: 10px 10px 30px #999;
 }
 
 .styleA{
-    background-color: #cf7b04;
+    background-color: #0e6ebe;
     color: white;
     padding: 8px 15px;
     text-aling: center;
@@ -16,17 +16,15 @@
 
 }
 
-
-
 .styleA:hover{
     background-color: white;
-    color: #cf7b04;
+    color: #0e6ebe;
 }
 
 
 .image:hover {
-    width: 100px;
-    height: 100px;
+    width: 205px;
+    height: 75px;
     transition-duration: 0.9s;
     opacity: 0.7;
 }
@@ -67,7 +65,7 @@
 }
 
 .fa-instagram {
-  background: #125688;
+  background: #ff6600;
   color: white;
 }
 

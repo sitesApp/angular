@@ -53,5 +53,9 @@ constructor(
     return this.get(this.resourceUrl+"getCoupons/"+siteUsername)
   }
 
+  getCoupon(siteUsername, couponName): Observable<Coupon> {
+    return this.get(this.resourceUrl+"getCoupon/"+siteUsername+"/"+couponName)
+  }
+
 
 }

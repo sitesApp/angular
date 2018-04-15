@@ -1,9 +1,11 @@
 <nav class="navbar navbar-toggleable-md  fixed-top ">
 
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="styleA" routerLinkActive="/categorys" routerLink="/categorys">Categorías</a>
+        <a class="styleLogo" routerLinkActive="/categorys" routerLink="/categorys" ><img class="image" src="/assets/brand/logo.png" width="200" height="70"></a>
+
+
       </li>
       &nbsp;
       &nbsp;
@@ -12,20 +14,21 @@
   </div>
   <div class="mx-auto order-0">
 
-    <a class="styleLogo" routerLinkActive="/categorys" routerLink="/categorys" ><img class="image" src="/favicon.ico" width="70" height="70"></a>
   </div>
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       &nbsp;
       &nbsp;
       &nbsp;
       <li class="nav-item">
-        <a  routerLinkActive="/contact" routerLink="/contact"  class="styleA" >Contactanos</a>
       </li>
 
 
     </ul>
     <ul class="navbar-nav ml-auto">
+
+      <a class="styleA" routerLinkActive="/categorys" routerLink="/categorys">Categorías</a>
+      <a  routerLinkActive="/contact" routerLink="/contact"  class="styleA" >¿Eres empresa?</a>
       <li class="nav-item">
         <a *ngIf="!isLoggedIn()" routerLinkActive="/signin" routerLink="/signin"  class="styleA" >Ingresa</a>
       </li>

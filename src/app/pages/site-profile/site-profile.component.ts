@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { Coupon } from '../../models/coupon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-site-profile',
@@ -13,12 +14,15 @@ export class SiteProfileComponent implements OnInit {
   private currentUser: User;
   private listCoupons: Coupon[];
 
-  constructor(public usersService: UsersService) { }
+
+
+  constructor(public usersService: UsersService, public router: Router) { }
 
   ngOnInit() {
         window.scroll(0,0)
     var data = sessionStorage.getItem("siteName");
     this.usersService.getSite(data).subscribe(usersResponse=>{
+
        this.currentUser = usersResponse;
     })
 
@@ -26,10 +30,11 @@ export class SiteProfileComponent implements OnInit {
     this.usersService.getCouponsByUsernameSite(data1).subscribe(usersResponse=>{
        this.listCoupons = usersResponse;
     })
+  }
 
-
-
-
+  saveCouponName(name: string){
+    this.router.navigate(['coupon']);
+    sessionStorage.setItem("couponName", name);
   }
 
 }
