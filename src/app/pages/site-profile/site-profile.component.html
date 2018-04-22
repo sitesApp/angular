@@ -55,10 +55,26 @@
                             <p class="card-text"><font size="2">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</font></p>
                             <p class="card-text"><font size="2">Dirección: {{currentUser.companyAddres}}</font></p>
                             <p class="card-text"><font size="2">Correo: {{currentUser.email}}</font></p>
-                            <p class="card-text"><font size="2">{{currentUser.schedule}}</font></p>
+                            <p class="card-text"><font size="2">Horario: {{currentUser.schedule}}</font></p>
+                            <p *ngIf="currentUser.tieneDomicilios" class="card-text">
+                                <font size="2">Tiene Domicilios</font>
+                            </p>
+                            <p *ngIf="currentUser.tieneDatafono" class="card-text">
+                                <font size="2">Tiene Datafono</font>
+                            </p>
+                            <p *ngIf="!currentUser.tieneDomicilios" class="card-text">
+                                <font size="2">No tiene Domicilios</font>
+                            </p>
+                            <p *ngIf="!currentUser.tieneDatafono" class="card-text">
+                                <font size="2">No tiene Datafono</font>
+                            </p>
+
+
+
                             <a target="_blank" href="{{currentUser.linkFacebook}}" class="fa fa-facebook"></a>
                             <a target="_blank" href="{{currentUser.linkInstagram}}" class="fa fa-instagram"></a>
                             <a target="_blank" href="{{currentUser.linkTA}}" class="fa fa-tripadvisor"></a>
+                            <a target="_blank" href="{{currentUser.linkGoogleMaps}}" class="fa fa-map-marker"></a>
 
                         </div>
 

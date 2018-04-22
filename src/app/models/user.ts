@@ -12,10 +12,13 @@ export class User {
     private schedule: string;
     private linkTA: string;
     public linkGoogleMaps: string;
+    public tieneDomicilios: boolean;
+    public tieneDatafono: boolean;
+
 
 constructor(username:string, email:string, password:string, firstname: string, lastname: string, logo:string,
                 cel1:number, cel2:number, linkFacebook:string, linkInstragram:string, schedule: string, linkTA:string,
-                linkGoogleMaps: string) {
+                linkGoogleMaps: string, tieneDatafono: boolean, tieneDomicilios:boolean) {
 
         this.username=username;
         this.firstname = firstname;
@@ -30,6 +33,8 @@ constructor(username:string, email:string, password:string, firstname: string, l
         this.schedule=schedule;
         this.linkTA=linkTA;
         this.linkGoogleMaps=linkGoogleMaps;
+        this.tieneDatafono=tieneDatafono;
+        this.tieneDomicilios=tieneDomicilios;
     }
 
 

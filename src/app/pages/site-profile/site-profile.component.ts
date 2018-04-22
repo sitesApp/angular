@@ -31,11 +31,14 @@ export class SiteProfileComponent implements OnInit {
         console.log(usersResponse);
        this.listCoupons = usersResponse;
     })
+
   }
 
   saveCouponName(name: string){
     this.router.navigate(['coupon']);
     sessionStorage.setItem("couponName", name);
   }
+
+
 
 }
