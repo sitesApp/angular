@@ -33,6 +33,7 @@ import { CouponPageComponent } from './pages/coupon-page/coupon-page.component';
 
 
 import { UsersService } from './services/users.service';
+import { TownService } from './services/town.service';
 import { CategoryService } from './services/category.service';
 import { NgxSlideshowModule } from 'ngx-slideshow';
 
@@ -86,6 +87,7 @@ const ROUTES = [
     AppDataService,
     UsersService,
     CategoryService,
+    TownService,
   ],
   bootstrap: [AppComponent]
 })

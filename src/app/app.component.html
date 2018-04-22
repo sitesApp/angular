@@ -10,9 +10,23 @@
       &nbsp;
       &nbsp;
       &nbsp;
+
       <form [formGroup]="searchForm" (ngSubmit)="searchSite()" class="form-inline">
+
+
+        <div class="dropdown">
+
+          <span class="styleA"><img class="image" src="/assets/images/location.png" width="19" height="19">{{textTowns}}</span>
+          <div class="dropdown-content">
+            <a class="nav-link" (click)="searchTown(town.name)"  *ngFor="let town of townList">{{town.name}}</a>
+          </div>
+
+        </div>
+
+        &nbsp;
         <div class="input-group">
-          <input type="text" class="form-control" formControlName="inputSearch" placeholder="Lugar" >
+
+          <input type="text" class="form-control" formControlName="inputSearch" placeholder="Buscar" >
           <button type="submit" class="btn btn-success" [disabled]="!searchForm.valid">Buscar</button>
         </div>
       </form>
@@ -25,6 +39,14 @@
 
     </ul>
     <ul class="navbar-nav ml-auto">
+
+      <div class="dropdown">
+        <span class="styleA">Categorias</span>
+        <div class="dropdown-content">
+          <a class="nav-link" (click)="saveCategory(cl.name)" routerLinkActive="/sites" routerLink="/sites"  *ngFor="let cl of categoryList">{{cl.name}}</a>
+        </div>
+
+      </div>
 
       <a class="styleA" routerLinkActive="/categorys" routerLink="/categorys">Categorías</a>
       <a  routerLinkActive="/contact" routerLink="/contact"  class="styleA" >¿Eres empresa?</a>

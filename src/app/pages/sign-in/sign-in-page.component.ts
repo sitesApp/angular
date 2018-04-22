@@ -28,9 +28,11 @@ export class SignInPageComponent implements OnInit {
       this.signInForm.get('username').value,
       this.signInForm.get('password').value).subscribe(loginResponse => {
         this.router.navigate(['categorys']);
+        window.location.reload();
       }, error => {
         this.loginError = 'Vuelve a intentarlo' ;
       })
+
   }
 
 

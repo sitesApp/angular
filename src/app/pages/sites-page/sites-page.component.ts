@@ -16,6 +16,7 @@ export class SitesPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
         window.scroll(0,0)
     var data = sessionStorage.getItem("categoryName");
     this.usersService.getSitesByCategory(data).subscribe(usersResponse=>{
